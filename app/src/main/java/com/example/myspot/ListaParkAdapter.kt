@@ -3,6 +3,7 @@ package com.example.myspot
 import android.animation.BidirectionalTypeConverter
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,13 +14,15 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
 import org.w3c.dom.Text
 
 
-class ListaParkAdapter: RecyclerView.Adapter<ListaParkAdapter.ViewHolder>() {
+class ListaParkAdapter(val fragmentManager: FragmentManager): RecyclerView.Adapter<ListaParkAdapter.ViewHolder>(){
     //var onItemClick: ((Park) -> Unit)? = null
+    private val TAG = ListaParkAdapter::class.java.simpleName
     private var parks = arrayOf(
         Park(
             "P019",
@@ -56,15 +59,16 @@ class ListaParkAdapter: RecyclerView.Adapter<ListaParkAdapter.ViewHolder>() {
 
         init {
             itemPark = itemView.findViewById(R.id.parkNameView)
-            itemInfo = itemView.findViewById(R.id.kindView)
+            itemInfo = itemView.findViewById(R.id.kindView) //kindView
             itemDistance = itemView.findViewById(R.id.distanceView)
             //itemDetalhes = itemView.findViewById(R.id.detalhes)
             //itemView.setOnClickListener(context);
 
-        /*itemView.setOnClickListener {
-               Intent intent =
-                onItemClick?.invoke(parks[adapterPosition])
-           }*/
+        itemView.setOnClickListener {
+               Log.i(TAG,"Coloquei")
+               NavigationManager.goToDetalhes(fragmentManager, adapterPosition)
+
+           }
         }
 
         /*override fun onClick(v: View?) {
@@ -82,6 +86,7 @@ class ListaParkAdapter: RecyclerView.Adapter<ListaParkAdapter.ViewHolder>() {
             viewType: Int
         ): ListaParkAdapter.ViewHolder {
             val v = LayoutInflater.from(parent.context).inflate(R.layout.item_list, parent, false)
+
             return ViewHolder(v)
         }
 

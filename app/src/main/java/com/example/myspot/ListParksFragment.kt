@@ -12,6 +12,7 @@ import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
@@ -54,7 +55,7 @@ class ListParksFragment : Fragment() {
         val rvParks = getView()?.findViewById<RecyclerView>(R.id.recyclerView) as RecyclerView
 
         layoutManager = LinearLayoutManager(activity as Context) //Fragments don't have context like the activities.
-        adapter = ListaParkAdapter()
+        adapter = ListaParkAdapter(parentFragmentManager)
 
         rvParks.layoutManager = layoutManager
         rvParks.adapter = adapter

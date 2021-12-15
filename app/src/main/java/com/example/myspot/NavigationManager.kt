@@ -1,5 +1,6 @@
 package com.example.myspot
 
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 
@@ -17,8 +18,13 @@ class NavigationManager {
             placeFragment(fm, ListParksFragment())
         }
 
-        fun goToDetalhes(fm:FragmentManager){
-            placeFragment(fm, DetalhesFragment())
+        // vai para o detalhe associado a esta posicao
+        fun goToDetalhes(fm:FragmentManager, position: Int){
+            val bundle = Bundle()
+            bundle.putInt("position", position)
+            val fragment = DetalhesFragment()
+            fragment.arguments = bundle
+            placeFragment(fm, fragment)
         }
     }
 
