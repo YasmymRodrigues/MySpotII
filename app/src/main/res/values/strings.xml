@@ -45,5 +45,14 @@
     <string name="subscriber_inserted_sucessfully">Subscriber was successfully inserted</string>
     <string name="subscriber_error_to_insert">There was an error when inserting Subscriber</string>
     <string name="welcome">Welcome</string>
+    <string name="delete">delete</string>
+    <string name="save">save</string>
+    <string name="date">date</string>
+    <string name="chooseDate">Escolha uma data</string>
+    <string name="registry">Registro</string>
+    <string name="registro">Registro</string>
+    <string name="brand">Marca</string>
+    <string name="createNew">Criar Carro</string>
+    <string name="model">Modelo</string>
 
 </resources>

@@ -4,6 +4,7 @@ import android.icu.lang.UCharacter.BidiPairedBracketType.OPEN
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
@@ -34,8 +35,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        /*when(item.itemId){
             R.id.nav_home -> NavigationManager.goToListParksFragment(supportFragmentManager)
+        }*/
+
+        when (item.itemId) {
+            R.id.nav_home ->
+            {
+                NavigationManager.goToListParksFragment(supportFragmentManager)
+                //Toast.makeText(this, "Lista Parks", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_my_cars ->
+            {
+                NavigationManager.goToListCarFragment(supportFragmentManager)
+                //Toast.makeText(this, "Lista Cars", Toast.LENGTH_SHORT).show()
+            }
+            /*R.id.nav_contact->
+            {
+                NavigationManager.goToDetalhesCar(supportFragmentManager, 1)
+                //Toast.makeText(this, "Contacts", Toast.LENGTH_SHORT).show()
+            }*/
         }
         drawer.closeDrawer(GravityCompat.START)
         return true
@@ -47,7 +66,4 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         else if(supportFragmentManager.backStackEntryCount == 1) finish()
         else super.onBackPressed()
     }
-
-
-
 }

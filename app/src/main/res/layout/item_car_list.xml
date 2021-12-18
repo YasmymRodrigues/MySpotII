@@ -6,8 +6,7 @@
     android:paddingBottom="8dp"
     android:paddingLeft="8dp"
     android:paddingRight="8dp"
-    android:paddingTop="8dp"
-    >
+    android:paddingTop="8dp">
     <androidx.cardview.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
@@ -35,7 +34,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="Marca"
+                    android:text="@string/marca"
                     android:textStyle="bold"
                     android:textSize="22sp" />
 
@@ -43,7 +42,7 @@
                     android:id="@+id/data"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="21/11/2021"
+                    android:text="@string/data"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:paddingStart="10dp"/>
@@ -59,14 +58,14 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="Modelo"
+                    android:text="@string/modelo"
                     android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/matricula"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="matricula"
+                    android:text="@string/matricula"
                     android:textSize="12sp"
                     android:paddingStart="10dp"/>
             </LinearLayout>

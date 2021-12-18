@@ -9,5 +9,5 @@
         android:id="@+id/carFragment"
         android:name="com.example.myspot.ui.CarFragment"
         android:label="@string/carros"
-        tools:layout="@layout/car_fragment" />
+        tools:layout="@layout/fragment_car_formulario" />
 </navigation>

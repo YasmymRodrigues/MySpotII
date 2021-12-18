@@ -22,7 +22,22 @@ class NavigationManager {
         fun goToDetalhes(fm:FragmentManager, position: Int){
             val bundle = Bundle()
             bundle.putInt("position", position)
-            val fragment = DetalhesFragment()
+            val fragment = DetalhesFragmentListPark()
+            fragment.arguments = bundle
+            placeFragment(fm, fragment)
+        }
+
+        fun goToListCarFragment(fm: FragmentManager){
+            placeFragment(fm, ListCarFragment())
+        }
+
+        fun goToDetalhesCar(fm: FragmentManager, position: Int?, create : Boolean){
+            val bundle = Bundle()
+            if (position != null) {
+                bundle.putInt("position", position)
+            }
+            bundle.putBoolean("create", create)
+            val fragment = CarDetalhesFragment()
             fragment.arguments = bundle
             placeFragment(fm, fragment)
         }

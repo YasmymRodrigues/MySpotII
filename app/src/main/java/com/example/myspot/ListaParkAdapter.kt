@@ -95,9 +95,6 @@ class ListaParkAdapter(val fragmentManager: FragmentManager): RecyclerView.Adapt
             holder.itemInfo.text = parks[position].toString()
             holder.itemDistance.text = parks[position].toString()
             //holder.itemDetalhes.text = parks[position].toString()
-
-
-
         }
 
         override fun getItemCount(): Int {
