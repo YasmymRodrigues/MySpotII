@@ -1,4 +1,4 @@
-package com.example.myspot.data.db.entity
+package com.example.myspot.ui
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

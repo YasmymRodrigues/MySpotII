@@ -1,6 +1,6 @@
 package com.example.myspot
 
-import com.example.myspot.data.db.entity.Car
+import com.example.myspot.ui.Car
 import kotlinx.coroutines.*
 
 class ListStorageCar private constructor() {

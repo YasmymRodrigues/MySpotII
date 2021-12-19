@@ -4,14 +4,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myspot.data.db.entity.Car
+import com.example.myspot.ui.Car
 
 class CarAdapter(val fragmentManager: FragmentManager): RecyclerView.Adapter<CarAdapter.ViewHolder>() {
     private val TAG = CarAdapter::class.java.simpleName
-    private var cars = arrayOf(Car("Audi", "ASX", "12/12/21", "S12EF"),Car("AudiX", "ASX", "12/12/21", "S12EF"))
+    private var cars = arrayOf(
+        Car("Audi", "ASX", "12/12/21", "S12EF"),
+        Car("AudiX", "ASX", "12/12/21", "S12EF")
+    )
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
        /* lateinit var itemModel: TextView

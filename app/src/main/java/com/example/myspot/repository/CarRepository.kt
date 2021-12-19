@@ -1,6 +1,6 @@
 package com.example.myspot.repository
 
-import com.example.myspot.data.db.entity.Car
+import com.example.myspot.ui.Car
 
 interface CarRepository {
 

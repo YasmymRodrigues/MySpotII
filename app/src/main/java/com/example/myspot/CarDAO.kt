@@ -1,16 +1,17 @@
 package com.example.myspot
 
 import androidx.room.*
-import com.example.myspot.data.db.entity.Car
+import com.example.myspot.ui.Car
 
 @Dao
   interface CarDAO {
          @Insert
          suspend fun insert(cars: Car):Long
 
+         //Extra
          @Update
          suspend fun update(cars: Car)
-
+         //Extra
          @Query("DELETE FROM car WHERE id=:id")
          suspend fun delete(id: Int) : Int
 

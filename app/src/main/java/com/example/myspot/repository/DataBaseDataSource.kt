@@ -1,9 +1,7 @@
 package com.example.myspot.repository
 
-import android.os.Parcel
-import android.os.Parcelable
 import com.example.myspot.CarDAO
-import com.example.myspot.data.db.entity.Car
+import com.example.myspot.ui.Car
 
 
 //Classe para ser uma fonte de dados de base de dados(nesse caso Room)
