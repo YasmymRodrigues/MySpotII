@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -14,13 +15,16 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class ListCarFragment : Fragment() {
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<CarAdapter.ViewHolder>? = null
-
+    private lateinit var viewModel: CarViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_car, container, false)
+        val view =  inflater.inflate(R.layout.fragment_car, container, false)
+        viewModel = ViewModelProvider(this)[CarViewModel::class.java]
+        //viewModel.display.let {view.text_visor.text = it}
+        return view
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val rvCars = getView()?.findViewById<RecyclerView>(R.id.recyclerView) as RecyclerView

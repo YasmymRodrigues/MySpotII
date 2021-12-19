@@ -66,19 +66,12 @@ class ListaParkAdapter(val fragmentManager: FragmentManager): RecyclerView.Adapt
 
         itemView.setOnClickListener {
                Log.i(TAG,"Coloquei")
+               //itemPark.text = viewModel.onClickSymbol(view.tag.toString())
                NavigationManager.goToDetalhes(fragmentManager, adapterPosition)
 
            }
         }
 
-        /*override fun onClick(v: View?) {
-            val position = absoluteAdapterPosition // gets item position
-            if (position != RecyclerView.NO_POSITION) { // Check if an item was deleted, but the user clicked it before the UI removed it
-                val user = parks[position]
-                // We can access the data within the views
-                //Toast.makeText(context, .LENGTH_SHORT).show()
-            }
-        }*/
     }
 
         override fun onCreateViewHolder(
