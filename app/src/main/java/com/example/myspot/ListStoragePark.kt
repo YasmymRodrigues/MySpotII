@@ -3,18 +3,18 @@ package com.example.myspot
 import kotlinx.coroutines.*
 import kotlinx.coroutines.internal.synchronized
 
-class ListStorage private constructor() {
+class ListStoragePark private constructor() {
     private val storage = mutableListOf<Park>()
     companion object{
-        private var instance: ListStorage?=null
+        private var instance: ListStoragePark?=null
 
         @InternalCoroutinesApi
-        fun getInstance():ListStorage{
+        fun getInstance():ListStoragePark{
             synchronized(this){
                 if (instance == null){
-                    instance = ListStorage()
+                    instance = ListStoragePark()
                 }
-                return instance as ListStorage
+                return instance as ListStoragePark
             }
         }
     }

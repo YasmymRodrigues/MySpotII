@@ -11,8 +11,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.item_car_list.*
+import kotlinx.android.synthetic.main.item_car_list.view.*
 
-class ListCarFragment : Fragment() {
+class ListCarFragment : Fragment(), OnDisplayChanged {
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<CarAdapter.ViewHolder>? = null
     private lateinit var viewModel: CarViewModel
@@ -23,7 +25,6 @@ class ListCarFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_car, container, false)
         viewModel = ViewModelProvider(this)[CarViewModel::class.java]
-        //viewModel.display.let {view.text_visor.text = it}
         return view
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,5 +41,18 @@ class ListCarFragment : Fragment() {
 
         rvCars.layoutManager = layoutManager
         rvCars.adapter = adapter
+    }
+    override fun onStart(){
+        viewModel.registerListener(this)
+        super.onStart()
+    }
+
+    override fun onDisplayChanged(value: String?) {
+        //value.let { marca.text = it }
+    }
+
+    override fun onDestroy() {
+        viewModel.unregisterListener()
+        super.onDestroy()
     }
 }
