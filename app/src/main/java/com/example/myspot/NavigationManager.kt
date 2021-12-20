@@ -41,6 +41,12 @@ class NavigationManager {
             fragment.arguments = bundle
             placeFragment(fm, fragment)
         }
+        fun goToContact(fm: FragmentManager){
+            placeFragment(fm, ContactFragment())
+        }
+        fun goToSettings(fm: FragmentManager){
+            placeFragment(fm, SettingsFragment())
+        }
     }
 
 }

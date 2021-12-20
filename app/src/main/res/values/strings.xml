@@ -54,5 +54,29 @@
     <string name="brand">Marca</string>
     <string name="createNew">Criar Carro</string>
     <string name="model">Modelo</string>
+    <string name="contact_blocked_car">Seu carro está bloqueado ? Clique no link abaixo para mais detalhes:</string>
+    <string name="service_points">Pontos de Serviço</string>
+    <string name="service1">LOJA DO CIDADÃO DO SALDANHA</string>
+    <string name="service1_address">Mercado 31 de Janeiro, Rua Engenheiro Vieira da Silva</string>
+    <string name="service1_schedule">Horário: Segunda a Sexta, das 8:30 às 19:00</string>
+    <string name="service2">LOJA DO CIDADÃO DAS LARANJEIRAS</string>
+    <string name="service2_address">Rua Abranches Ferrão, 10</string>
+    <string name="service2_schedule">Horário: Segunda a Sexta, das 8:30 às 19:30 // Sábados, das 9:30 às 15:00</string>
+    <string name="service3">EDIFÍCIO CENTRAL DO MUNICÍPIO DE LISBOA</string>
+    <string name="service3_address">Campo Grande, 25</string>
+    <string name="service3_schedule">Horário: Segunda a Sexta, das 8:00 às 20:00</string>
+    <string name="contact_hyperlink">Clique <a href="https://www.emel.pt/pt/faq/">Aqui</a> para ter o serviço online:</string>
+    <string name="contact_center">Centro para contacto</string>
+    <string name="contact_phone"><b>Telefone:</b> 211 163 060</string>
+    <string name="contact_schedule"><b>Horário:</b> Segunda a Sexta - 8:00 às 20:00 / Sábado - 9:00 às 15:00</string>
+    <string name="settings_header">DarkMode</string>
+    <string name="darkmode_description_off">Não muda para DarkMode quando possui pouca bateria</string>
+    <string name="darkmode_description_on">Muda para o DarkMode quando tem pouca bateria</string>
+    <string name="darkmode_title">Mudar para DarkMode</string>
+    <string name="shake_description_off">Filtros não reiniciados por movimento</string>
+    <string name="shake_description_on">Filtros iniciados por movimento</string>
+    <string name="shake_title">Limpar por movimento</string>
+    <string name="settings">Configurações</string>
+
 
 </resources>

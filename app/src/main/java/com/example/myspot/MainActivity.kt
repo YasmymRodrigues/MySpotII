@@ -50,11 +50,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 NavigationManager.goToListCarFragment(supportFragmentManager)
                 //Toast.makeText(this, "Lista Cars", Toast.LENGTH_SHORT).show()
             }
-            /*R.id.nav_contact->
+            R.id.nav_contact->
             {
-                NavigationManager.goToDetalhesCar(supportFragmentManager, 1)
+                NavigationManager.goToContact(supportFragmentManager)
                 //Toast.makeText(this, "Contacts", Toast.LENGTH_SHORT).show()
-            }*/
+            }
+            R.id.nav_settings ->
+            {
+                NavigationManager.goToSettings(supportFragmentManager)
+            }
         }
         drawer.closeDrawer(GravityCompat.START)
         return true
