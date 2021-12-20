@@ -1,28 +1,17 @@
 package com.example.myspot
 
-import android.animation.BidirectionalTypeConverter
-import android.content.Context
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.view.menu.ActionMenuItemView
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.navigation.NavigationView
-import org.w3c.dom.Text
 
 
-class ListaParkAdapter(val fragmentManager: FragmentManager): RecyclerView.Adapter<ListaParkAdapter.ViewHolder>(){
+class ListParkAdapter(val fragmentManager: FragmentManager): RecyclerView.Adapter<ListParkAdapter.ViewHolder>(){
     //var onItemClick: ((Park) -> Unit)? = null
-    private val TAG = ListaParkAdapter::class.java.simpleName
+    private val TAG = ListParkAdapter::class.java.simpleName
     private var parks = arrayOf(
         Park(
             "P019",
@@ -66,7 +55,7 @@ class ListaParkAdapter(val fragmentManager: FragmentManager): RecyclerView.Adapt
 
         itemView.setOnClickListener {
                Log.i(TAG,"Coloquei")
-               //itemPark.text = viewModel.onClickSymbol(view.tag.toString())
+               //itemPark.text = viewModel.onClickSymbol(itemView.tag.toString())
                NavigationManager.goToDetalhes(fragmentManager, adapterPosition)
 
            }
@@ -77,7 +66,7 @@ class ListaParkAdapter(val fragmentManager: FragmentManager): RecyclerView.Adapt
         override fun onCreateViewHolder(
             parent: ViewGroup,
             viewType: Int
-        ): ListaParkAdapter.ViewHolder {
+        ): ListParkAdapter.ViewHolder {
             val v = LayoutInflater.from(parent.context).inflate(R.layout.item_list, parent, false)
 
             return ViewHolder(v)

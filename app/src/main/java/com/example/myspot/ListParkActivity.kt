@@ -9,10 +9,10 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.recyclerview.widget.RecyclerView
 
 
-public class ListaParkActivity : AppCompatActivity() {
+public class ListParkActivity : AppCompatActivity() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<ListaParkAdapter.ViewHolder>? = null
+    private var adapter: RecyclerView.Adapter<ListParkAdapter.ViewHolder>? = null
     lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {

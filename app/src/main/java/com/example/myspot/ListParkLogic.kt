@@ -1,8 +1,9 @@
 package com.example.myspot
 
+import com.example.myspot.repository.ParkRepository
 import kotlinx.coroutines.InternalCoroutinesApi
 
-class ListParkLogic {
+class ListParkLogic(private val repository: ParkRepository) {
     @InternalCoroutinesApi
     private val storage = ListStoragePark.getInstance()
 
@@ -11,4 +12,6 @@ class ListParkLogic {
 
         return ""
     }
+
+    fun onClickSymbol(){}
 }

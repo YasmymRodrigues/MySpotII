@@ -15,7 +15,7 @@ class NavigationManager {
         }
 
         fun goToListParksFragment(fm: FragmentManager){
-            placeFragment(fm, ListParksFragment())
+            placeFragment(fm, ListParkFragment())
         }
 
         // vai para o detalhe associado a esta posicao

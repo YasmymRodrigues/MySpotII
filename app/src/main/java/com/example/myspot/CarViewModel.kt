@@ -3,6 +3,7 @@ package com.example.myspot
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
+import com.example.myspot.repository.CarRepository
 
 //Do not process data
 class CarViewModel(application: Application) : AndroidViewModel(application) {
