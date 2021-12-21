@@ -2,35 +2,37 @@ package com.example.myspot
 
 import androidx.lifecycle.ViewModel
 import com.example.myspot.repository.ParkRepository
+import kotlinx.coroutines.InternalCoroutinesApi
+
+const val ENDPOINT = "https://emel.city-platform.com/opendata/"
 
 class ListParkViewModel : ViewModel() {
     private val parkRepository = ParkRepository()
-    private val ListParkLogic = ListParkLogic(parkRepository)
-    var display: String = ""
-    private var listener: OnDisplayChanged?=null
+    private val listParkLogic = ListParkLogic(parkRepository)
+    private val wsLogic = ListParkWSLogic(RetrofitBuilder.getInstance(ENDPOINT))
 
+   @InternalCoroutinesApi
+   fun getAll(): List<Park>{
+        return listParkLogic.getParks()
+    }
 
-   /* fun onClickSymbol(symbol:String):String{
-        display = ListParkLogic.insertPark(display, symbol)
-        return display
-    }*/
-
-    private fun notifyOnDisplayChanged(){
+   /* private fun notifyOnDisplayChanged(){
         listener?.onDisplayChanged(display)
     }
 
-    fun registerListener(listener: OnDisplayChanged){
+    fun registerListener(listener: ListParkFragment){
         this.listener = listener
         listener?.onDisplayChanged(display)
     }
 
     fun unregisterListener(){
         listener = null
-    }
-
-    /*fun onClickSymbol(symbol: String){
-        display = ListParkLogic.onClickSymbol(display, symbol)
-        notifyOnDisplayChanged()
     }*/
+
+
+
+
+
+
 
 }

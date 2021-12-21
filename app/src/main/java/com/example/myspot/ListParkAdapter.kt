@@ -9,10 +9,11 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 
 
-class ListParkAdapter(val fragmentManager: FragmentManager): RecyclerView.Adapter<ListParkAdapter.ViewHolder>(){
+class ListParkAdapter(val fragmentManager: FragmentManager, val parks: List<Park>): RecyclerView.Adapter<ListParkAdapter.ViewHolder>(){
     //var onItemClick: ((Park) -> Unit)? = null
     private val TAG = ListParkAdapter::class.java.simpleName
-    private var parks = arrayOf(
+
+   /* private var parks = arrayOf(
         Park(
             "P019",
             "Park0001",
@@ -35,7 +36,7 @@ class ListParkAdapter(val fragmentManager: FragmentManager): RecyclerView.Adapte
             -9.15528429,
             "Nao"
         )
-    )
+    )*/
     // inner class ViewHolder(private val context: Context, itemView: View) : RecyclerView.ViewHolder(itemView) {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         lateinit var itemPark: TextView

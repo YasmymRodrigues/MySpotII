@@ -5,7 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 
-class AuthLogic(private val retrofit: Retrofit) {
+class ListParkWSLogic(private val retrofit: Retrofit) {
 
     /*fun AuthenticateParkLot(){
         val service = retrofit.create(AuthService::class.java)

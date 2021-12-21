@@ -9,12 +9,13 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_list.*
+import kotlinx.coroutines.InternalCoroutinesApi
 
-class ListParkFragment : Fragment(), OnDisplayChanged {
+class ListParkFragment : Fragment() {
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<ListParkAdapter.ViewHolder>? = null
     private lateinit var viewModel: ListParkViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,27 +29,29 @@ class ListParkFragment : Fragment(), OnDisplayChanged {
         return view
     }
 
+    @InternalCoroutinesApi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val rvParks = getView()?.findViewById<RecyclerView>(R.id.recyclerView) as RecyclerView
 
         layoutManager = LinearLayoutManager(activity as Context) //Fragments don't have context like the activities.
-        adapter = ListParkAdapter(parentFragmentManager)
+        adapter = ListParkAdapter(parentFragmentManager, viewModel.getAll())
 
         rvParks.layoutManager = layoutManager
         rvParks.adapter = adapter
     }
 
-    override fun onStart(){
+  /*  override fun onStart(){
         viewModel.registerListener(this)
         super.onStart()
-    }
+    }*/
 
-    override fun onDisplayChanged(value: String?) {
+   /* override fun onDisplayChanged(value: String?) {
         //value.let { parkNameView.text = it }
-    }
+    }*/
 
-    override fun onDestroy() {
+    /*override fun onDestroy() {
         viewModel.unregisterListener()
         super.onDestroy()
-    }
+    }*/
+
 }
